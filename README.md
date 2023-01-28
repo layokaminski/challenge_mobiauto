@@ -2,28 +2,31 @@
 
 Projeto criado para o desafio da mobiauto
 
-## ⚙️ Executando os requistos
+## ⚙️ Executando os testes
 
-No arquivo `src/App.java` para testar cada requisito do desafio, devemos chamar a Classe e chamar o método `execute`
+```
+mvn test
+```
 
-### 🔩 Exemplo de execução
 
-```java
-public class App {
-    public static void main(String[] args) throws Exception {
-        FizzBuzz.execute();
-    }
+### Rotas
+
+# Criar funcionário
+
+- `/api/employee`
+- exemplo de json a ser enviado:
+
+```json
+{
+ "name": "Test da Silva",
+ "cpf": "42115812321",
+ "birthday": "10/01/1990",
+ "address": "Rua Test, 300",
+ "phone": "11 99999-9999",
+ "salary": 3000.00
 }
 ```
-Ou no caso do método necessitar da função `System.out.println` e de parâmetros
 
-```java
-public class App {
-    public static void main(String[] args) throws Exception {
-        int[] wins = { 1, 0, 3 };
-        int[] ties = { 2, 2, 0 };
+- `/api/adjustment/42115812321` CPF utilizando no exemplo acima, rota atualiza o salario do funcionario
+- `/api/tax/42115812321` CPF utilizando no exemplo acima, rota faz calculo do imposto
 
-        System.out.println(CalculateChampion.execute(wins, ties));
-    }
-}
-```
